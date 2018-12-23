@@ -1,12 +1,21 @@
 package math.problems;
 
+import com.mysql.cj.xdevapi.SqlDataResult;
 import databases.ConnectToSqlDB;
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.ResultSet;
+import java.util.Iterator;
+import java.util.LinkedList;
+
+import static databases.ConnectToSqlDB.statement;
+
 
 public class PrimeNumber {
+	static LinkedList<Long> linkedlist=new LinkedList<Long>();
 
 	public static void main(String[] args) {
 		/*
@@ -18,10 +27,9 @@ public class PrimeNumber {
 		 * Use any databases[MongoDB, Oracle, MySql] to store data and retrieve data.
 		 *
 		 */
-//Create ConnectToSqlDB Object
-		//ConnectToSqlDB consql = new ConnectToSqlDB();
+        Connection conn = null;
 		try{
-			Connection con = ConnectToSqlDB.connectToSqlDatabase();
+			 conn = ConnectToSqlDB.connectToSqlDatabase();
 		}
 			catch(SQLException e){
 				System.out.println(e);
@@ -35,10 +43,33 @@ public class PrimeNumber {
 
 		int lowerbound =2;
 		//long higherbound = 1000000L;
-		long higherbound = 5;
+		long higherbound = 500;
 
 
 		prime(lowerbound,higherbound);
+	//create a Statement from the connection
+		try {
+			Statement statement = conn.createStatement();
+			Iterator i = linkedlist.iterator();
+			while(i.hasNext())
+			// insert the data
+			statement.executeUpdate("INSERT INTO PRIME VALUES("+i.next()+")");
+		}
+		catch (SQLException e)
+		{
+			System.out.println("Statement Problem"+e);
+		}
+		try {
+			conn.close();
+		}
+		catch (SQLException e)
+		{
+			System.out.println(" Database Colsing Problem"+e);
+		}
+
+
+
+
 
 	}
 	public static void prime(int l,long h){
@@ -55,8 +86,10 @@ public class PrimeNumber {
 				else  flag = true;
 
 			}
-			if(flag== true)
+			if(flag== true) {
 				System.out.println(i);
+				PrimeNumber.linkedlist.add(Long.valueOf(i));
+			}
 
 
 		}
