@@ -78,7 +78,11 @@ public class ProcessStudentInfo {
 				//Retrieve Qtp students from Database
                List<Student> stList = connectToMongoDB.readStudentListFromMongoDB("qtp");
                for(Student st:stList){
-               	  System.out.println(st.getFirstName()+" "+st.getLastName()+" "+st.getScore()+" "+st.getId());
+
+//
+				   System.out.println("Student  ("+"id="+st.getId()+")   "+"\""+st.getFirstName()+"\"		\""+st.getLastName()+"\"     	"+"Grade="+st.getScore());
+               	 // System.out.println(st.getFirstName()+" "+st.getLastName()+" "+st.getScore()+" "+st.getId());
+
 			   }
 
 			   //Retrieve Selenium students from Database

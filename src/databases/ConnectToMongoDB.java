@@ -93,6 +93,7 @@ public class ConnectToMongoDB {
             student.setId(id);
             student = new Student(student.getFirstName(),student.getLastName(),student.getScore(),student.getId());
             list.add(student);
+            student = new Student();
         }
         return list;
     }
