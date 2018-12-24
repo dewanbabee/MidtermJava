@@ -25,8 +25,10 @@ public class EmployeeInfo extends AbstractEmployee {
 	public enum performance {
 		BEST,GOOD, AVEGRAGE, NORMAL
 	}
-
+    private int salary;
 	private String email;
+	public  String joinDate;
+
 	/*
 	 * You must implement the logic for below 2 methods and
 	 * following 2 methods are prototype as well for other methods need to be design,
@@ -44,26 +46,42 @@ public class EmployeeInfo extends AbstractEmployee {
 	public EmployeeInfo(int employeeId) {
 		super("NoNameAvaiable", employeeId, 0, 0.0);
 		this.email = "not assigned";
+		this.salary= 0;
 	}
 
 	public EmployeeInfo(String name, int employeeId) {
 		super(name, employeeId, 0, 0.0);
 		this.email = "not assigned";
+		this.joinDate = "notAssigned";
+	}
+	public EmployeeInfo(String name, int employeeId,String joinDate) {
+		super(name, employeeId, 0, 0.0);
+		this.email = "not assigned";
+		this.joinDate = joinDate;
+		this.salary =0;
 	}
 
 	public void assignEmail(String email) {
 		this.email = email;
 
 	}
-
+    public String getJoinDate()
+	{
+		return this.joinDate;
+	}
+	public void setJoinDate(String joinDate)
+	{
+		 this.joinDate = joinDate;
+	}
 	public String getEmail()
 	{
 		return this.email;
 	}
-	//calculate employee salary
+	//overriden employee salary method
 	public int calculateSalary()
 	{
-		
+
+
 	}
 	/*
 	 * This methods should calculate Employee bonus based on salary and performance.
