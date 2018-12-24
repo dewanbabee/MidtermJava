@@ -2,7 +2,13 @@ package math.problems;
 
 import databases.ConnectToSqlDB;
 
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 public class LowestNumber {
@@ -13,11 +19,16 @@ public class LowestNumber {
 		 * Use one of the databases from mysql or mongodb to store and to retrieve.
 		 */
 		int  array[] = new int[]{211,110,99,34,67,89,67,456,321,456,78,90,45,32,56,78,90,54,32,123,67,5,679,54,32,65};
-
 		//find lowest number from the array
+		Arrays.sort(array);
+
+
+
+
 
 		ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
 		List<String> lowestValue = new ArrayList<String>();
+		//lowestValue.add(Integer.toString(array[0]));
 		try {
 			connectToSqlDB.insertDataFromArrayToSqlTable(array, "tbl_lowestNumber", "column_lowestNumber");
 			lowestValue = connectToSqlDB.readDataBase("tbl_lowestNumber", "column_lowestNumber");
@@ -29,6 +40,7 @@ public class LowestNumber {
 		for(String st:lowestValue){
 			System.out.println(st);
 		}
+		System.out.println("Lowest number in this array is  "+array[0]);
 	}
 
 }

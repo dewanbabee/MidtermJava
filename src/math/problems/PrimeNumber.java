@@ -1,6 +1,6 @@
 package math.problems;
 
-import com.mysql.cj.xdevapi.SqlDataResult;
+
 import databases.ConnectToSqlDB;
 
 import java.io.IOException;
