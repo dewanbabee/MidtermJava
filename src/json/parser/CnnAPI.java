@@ -1,5 +1,19 @@
 package json.parser;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.List;
+
 public class CnnAPI {
     /*
       You can get API_KEY from this below link. Once you have the API_KEY, you can fetch the top-headlines news.
@@ -37,4 +51,53 @@ public class CnnAPI {
 	   Store into choice of your database and retrieve.
 
      */
+
+    public static void main(String[] args)throws MalformedURLException, IOException {
+        String sURL = "https://newsapi.org/s/cnn-api";
+        Employee emp = null;
+        List<Employee> empList = new ArrayList<>();
+        URL url = new URL(sURL);
+        URLConnection request = url.openConnection();
+        request.connect();
+        JsonArray jsonArray = null;
+        JsonParser jp = new JsonParser();
+        JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent()));
+        if (root instanceof JsonObject) {
+            JsonObject rootObj = root.getAsJsonObject();
+        } else if (root instanceof JsonArray) {
+            jsonArray =  root.getAsJsonArray();
+        }
+        String email = null;
+        String name= null;
+        String salary = null;
+        String dept = null;
+
+
+        for (int i = 0; i < jsonArray.size()-1; i++) {
+            try {
+                JsonObject jsonobject = jsonArray.get(i).getAsJsonObject();
+                //you code start here
+                email = jsonobject.get("empEmail").toString();
+                name= jsonobject.get("empName").toString();
+                salary = jsonobject.get("salary").toString();
+                dept = jsonobject.get("department").toString();
+                emp = new Employee(email,name,salary,dept);
+                empList.add(emp);
+
+
+
+
+
+
+
+            }catch(Exception ex){
+
+            }
+        }
+        //Print to the console.
+        for(Employee entry:empList){
+            System.out.println(entry.getEmpEmail()+" "+entry.getEmpName()+" "+entry.getSalary()+" "+entry.getDepartment());
+        }
+    }
+
 }
