@@ -22,10 +22,6 @@ public class LowestNumber {
 		//find lowest number from the array
 		Arrays.sort(array);
 
-
-
-
-
 		ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
 		List<String> lowestValue = new ArrayList<String>();
 		//lowestValue.add(Integer.toString(array[0]));
@@ -36,7 +32,7 @@ public class LowestNumber {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("Data is reading from the Table (tbl_primenumber) and displaying to the console");
+		System.out.println("Data is reading from the Table (tbl_lowestnumber) and displaying to the console");
 		for(String st:lowestValue){
 			System.out.println(st);
 		}

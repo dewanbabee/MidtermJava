@@ -95,7 +95,7 @@ public class ConnectToSqlDB {
 
             for(int n=0; n<ArrayData.length; n++){
                 //System.out.println(ArrayData[n]);
-                ps = connect.prepareStatement("INSERT INTO "+tableName+" ( "+columnName+" ) VALUES(?)");
+                ps = connect.prepareStatement("INSERT INTO `"+tableName+"` ( `"+columnName+"` ) VALUES(?);");
                 ps.setInt(1,ArrayData[n]);
                 ps.executeUpdate();
 
