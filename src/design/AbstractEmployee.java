@@ -1,14 +1,26 @@
 package design;
 
 public abstract class AbstractEmployee implements Employee{
-    int employeeId;
-    String firstName;
-    String lastName;
-    Departments deptName;
-    int hours;
-    double hourlyRate;
+    private int employeeId;
+    private String name;
+    private Departments deptName;
+    public int hours;
+    public double hourlyRate;
+    private  enum Departments{ HR, PRODUCTION,TESTING}
+    
+    public AbstractEmployee(){}
+        
+    public AbstractEmployee( String name,int employeeId, int hours, double hourlyRate) {
+        this.employeeId = employeeId;
+        this.name = name;
+        this.deptName = null;
+        this.hours = hours;
+        this.hourlyRate = hourlyRate;
+    }
 
-   public enum Departments{ HR, PRODUCTION,TESTING}
+  
+
+   
 
 
     //employeeId() will return employee id.
@@ -18,7 +30,7 @@ public abstract class AbstractEmployee implements Employee{
 
     //employeeName() will return employee name
     public String employeeName(){
-        return this.firstName+ " "+ this.lastName;
+        return this.name;
 
     }
 
@@ -44,6 +56,6 @@ public abstract class AbstractEmployee implements Employee{
     {
         System.out.println("will come back later");
     }
-    public abstract void getDayOff();
+    public abstract void assignEmail(String email);
 
 }

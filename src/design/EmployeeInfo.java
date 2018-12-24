@@ -3,50 +3,68 @@ package design;
 import java.util.Scanner;
 
 public class EmployeeInfo extends AbstractEmployee {
-	
- /*This class can be implemented from Employee interface then add additional methods in EmployeeInfo class.
- * Also, Employee interface can be implemented into an abstract class.So create an Abstract class
- * then inherit that abstract class into EmployeeInfo class.Once you done with designing EmployeeInfo class,
- * go to FortuneEmployee class to apply all the fields and attributes.
- * 
- * Important: YOU MUST USE the 
- * OOP(abstraction,Encapsulation, Inheritance and Polymorphism) concepts in every level possible.
- * Use all kind of keywords(super,this,static,final........)
- * Implement Nested class.
- * Use Exception Handling.
- *
- */
+
+	/*This class can be implemented from Employee interface then add additional methods in EmployeeInfo class.
+	 * Also, Employee interface can be implemented into an abstract class.So create an Abstract class
+	 * then inherit that abstract class into EmployeeInfo class.Once you done with designing EmployeeInfo class,
+	 * go to FortuneEmployee class to apply all the fields and attributes.
+	 *
+	 * Important: YOU MUST USE the
+	 * OOP(abstraction,Encapsulation, Inheritance and Polymorphism) concepts in every level possible.
+	 * Use all kind of keywords(super,this,static,final........)
+	 * Implement Nested class.
+	 * Use Exception Handling.
+	 *
+	 */
 
 	/*
 	 * declare few static and final fields and some non-static fields
 	 */
 	static String companyName;
-	
+
+	public enum performance {
+		BEST,GOOD, AVEGRAGE, NORMAL
+	}
+
+	private String email;
 	/*
-	 * You must implement the logic for below 2 methods and 
+	 * You must implement the logic for below 2 methods and
 	 * following 2 methods are prototype as well for other methods need to be design,
 	 * as you will come up with the new ideas.
 	 */
-	
+
 	/*
 	 * you must have multiple constructor.
 	 * Must implement below constructor.
 	 */
-	public EmployeeInfo()
+	public EmployeeInfo() {
+		super();
+	}
+
+	public EmployeeInfo(int employeeId) {
+		super("NoNameAvaiable", employeeId, 0, 0.0);
+		this.email = "not assigned";
+	}
+
+	public EmployeeInfo(String name, int employeeId) {
+		super(name, employeeId, 0, 0.0);
+		this.email = "not assigned";
+	}
+
+	public void assignEmail(String email) {
+		this.email = email;
+
+	}
+
+	public String getEmail()
 	{
-
+		return this.email;
 	}
-	public EmployeeInfo(int employeeId){
-		
+	//calculate employee salary
+	public int calculateSalary()
+	{
+		return (int)(this.hours*this.hourlyRate);
 	}
-    public EmployeeInfo(String name, int employeeId){
-		
-	}
-	public void getDayOff(){
-		System.out.println("getdayoff needs implementation");
-
-	}
-	
 	/*
 	 * This methods should calculate Employee bonus based on salary and performance.
 	 * Then it will return the total yearly bonus. So you need to implement the logic.
@@ -55,9 +73,16 @@ public class EmployeeInfo extends AbstractEmployee {
 	 * So you probably need to send 2 arguments.
 	 * 
 	 */
-	public static int calculateEmployeeBonus(int numberOfYearsWithCompany){
-		int total=0;
-		return total;
+	public static int calculateEmployeeBonus(int numberOfYearsWithCompany,int salary,performance p){
+		double total=0;
+		if(p.equals(performance.BEST)&& numberOfYearsWithCompany>=10)
+			total = salary*12*0.1;
+		else if(p.equals(performance.AVEGRAGE)&& numberOfYearsWithCompany>=8)
+			total = salary*12*0.08;
+		else if(p.equals(performance.NORMAL)&& numberOfYearsWithCompany>=8)
+			total = salary*12*0.05;
+		else total = 0;
+		return (int)total;
 	}
 	
 	/*
