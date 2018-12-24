@@ -53,41 +53,53 @@ public class CnnAPI {
      */
 
     public static void main(String[] args)throws MalformedURLException, IOException {
-        String sURL = "https://newsapi.org/s/cnn-api";
-        Employee emp = null;
-        List<Employee> empList = new ArrayList<>();
-        URL url = new URL(sURL);
-        URLConnection request = url.openConnection();
+        String sURL = "https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=0d9e35dfa3c140aab8bf9cdd70df957f";
+        HeadlineNews hnews = null;
+        List<HeadlineNews> newsList = new ArrayList<>();
+        URL apiurl = new URL(sURL);
+        URLConnection request = apiurl.openConnection();
         request.connect();
         JsonArray jsonArray = null;
+        JsonObject rootObj = null;
         JsonParser jp = new JsonParser();
         JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent()));
         if (root instanceof JsonObject) {
-            JsonObject rootObj = root.getAsJsonObject();
+            rootObj = root.getAsJsonObject();
         } else if (root instanceof JsonArray) {
             jsonArray =  root.getAsJsonArray();
         }
-        String email = null;
-        String name= null;
-        String salary = null;
-        String dept = null;
+
+        //if root is an Json object
+        if(jsonArray==null)
+            jsonArray= rootObj.getAsJsonArray("articles");
+
+        //initialize field to construct HeadlineNews ogject
+        String  source = null;
+        String  author = null;
+        String title = null;
+        String description = null;
+        String url = null ;
+        String urlToImage = null ;
+        String publishedAt = null ;
+        String  content = null;
 
 
         for (int i = 0; i < jsonArray.size()-1; i++) {
             try {
                 JsonObject jsonobject = jsonArray.get(i).getAsJsonObject();
-                //you code start here
-                email = jsonobject.get("empEmail").toString();
-                name= jsonobject.get("empName").toString();
-                salary = jsonobject.get("salary").toString();
-                dept = jsonobject.get("department").toString();
-                emp = new Employee(email,name,salary,dept);
-                empList.add(emp);
 
+                source= jsonobject.get("source").toString();
+                author= jsonobject.get("author").toString();
+                title = jsonobject.get("title").toString();
+                description = jsonobject.get("description").toString();
+                url= jsonobject.get("url").toString();
+                urlToImage= jsonobject.get("urlToImage").toString();
+                publishedAt = jsonobject.get("publishedAt").toString();
+                content = jsonobject.get("content").toString();
 
-
-
-
+                //Object of HeadlineNews
+                hnews = new HeadlineNews(source,author,title,description,url,urlToImage,publishedAt,content);
+                newsList.add(hnews);
 
 
             }catch(Exception ex){
@@ -95,8 +107,14 @@ public class CnnAPI {
             }
         }
         //Print to the console.
-        for(Employee entry:empList){
-            System.out.println(entry.getEmpEmail()+" "+entry.getEmpName()+" "+entry.getSalary()+" "+entry.getDepartment());
+        for(HeadlineNews entry:newsList){
+            System.out.println("News Title:" +entry.getTitle());
+            System.out.println("News Description: " + entry.getDescription());
+            System.out.println("News Content: "+ entry.getContent());
+            System.out.println("");
+            System.out.println("");
+
+
         }
     }
 
