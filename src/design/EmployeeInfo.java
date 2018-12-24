@@ -2,7 +2,7 @@ package design;
 
 import java.util.Scanner;
 
-public class EmployeeInfo {
+public class EmployeeInfo extends AbstractEmployee {
 	
  /*This class can be implemented from Employee interface then add additional methods in EmployeeInfo class.
  * Also, Employee interface can be implemented into an abstract class.So create an Abstract class
@@ -32,11 +32,19 @@ public class EmployeeInfo {
 	 * you must have multiple constructor.
 	 * Must implement below constructor.
 	 */
+	public EmployeeInfo()
+	{
+
+	}
 	public EmployeeInfo(int employeeId){
 		
 	}
     public EmployeeInfo(String name, int employeeId){
 		
+	}
+	public void getDayOff(){
+		System.out.println("getdayoff needs implementation");
+
 	}
 	
 	/*
