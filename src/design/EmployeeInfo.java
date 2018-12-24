@@ -63,7 +63,7 @@ public class EmployeeInfo extends AbstractEmployee {
 	//calculate employee salary
 	public int calculateSalary()
 	{
-		return (int)(this.hours*this.hourlyRate);
+		
 	}
 	/*
 	 * This methods should calculate Employee bonus based on salary and performance.
@@ -91,7 +91,7 @@ public class EmployeeInfo extends AbstractEmployee {
 	 * Hints: pension will be 5% of the salary for 1 year, 10% for 2 years with the company and so on.
 	 * 
 	 */
-	public static int calculateEmployeePension(){
+	public static int calculateEmployeePension(int salary){
 		int total=0;
 		Scanner sc  = new Scanner(System.in);
 		System.out.println("Please enter start date in format (example: May,2015): ");
@@ -102,10 +102,30 @@ public class EmployeeInfo extends AbstractEmployee {
         String convertedTodaysDate = DateConversion.convertDate(todaysDate);
 
         //implement numbers of year from above two dates
+
+		String[] tdate =convertedTodaysDate.split("/");
+		String[] jdate = convertedJoiningDate.split("/");
+		int totalYear = Integer.valueOf(tdate[1])-Integer.valueOf(jdate[1]);
+		if(Integer.valueOf(jdate[0])> Integer.valueOf(tdate[0]))
+			totalYear--;
+
+
 		//Calculate pension
+         if(totalYear>5)
+         	total = (int)(total + salary*.02);
+         else if(totalYear>3)
+			 total = (int)(total + salary*.015);
+		 else if(totalYear>2)
+			 total = (int)(total + salary*.010);
+		 else if(totalYear>1)
+			 total = (int)(total + salary*.005);
+		 else total = 0;
 
 		return total;
 	}
+
+
+
 	private static class DateConversion {
 
 		public DateConversion(Months months){}
@@ -140,22 +160,22 @@ public class EmployeeInfo extends AbstractEmployee {
 					date = 6;
 					break;
 				case July:
-					date = 1;
+					date = 7;
 					break;
 				case August:
-					date = 1;
+					date = 8;
 					break;
 				case September:
-					date = 1;
+					date = 9;
 					break;
 				case October:
-					date = 1;
+					date = 10;
 					break;
 				case November:
-					date = 1;
+					date = 11;
 					break;
 				case December:
-					date = 1;
+					date = 12;
 					break;
 				default:
 					date = 0;
