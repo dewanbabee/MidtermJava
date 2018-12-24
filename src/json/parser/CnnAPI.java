@@ -13,7 +13,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
-
+import databases.ConnectToSqlDB;
 public class CnnAPI {
     /*
       You can get API_KEY from this below link. Once you have the API_KEY, you can fetch the top-headlines news.
@@ -106,6 +106,14 @@ public class CnnAPI {
 
             }
         }
+        //Storing to Database
+        ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
+        connectToSqlDB.insertDataFromListToSqlTable(newsList, "CNN", "News");
+        try {
+            List<String> dbnews = connectToSqlDB.readDataBase("CNN", "News");
+        }catch(Exception e){
+            System.out.println(e);
+        }
         //Print to the console.
         for(HeadlineNews entry:newsList){
             System.out.println("News Title:" +entry.getTitle());
@@ -113,7 +121,6 @@ public class CnnAPI {
             System.out.println("News Content: "+ entry.getContent());
             System.out.println("");
             System.out.println("");
-
 
         }
     }

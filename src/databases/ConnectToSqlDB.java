@@ -1,13 +1,16 @@
 package databases;
 
+import json.parser.HeadlineNews;
 import parser.Student;
 
+import javax.swing.text.html.HTMLDocument;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
 import java.sql.Connection;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
 
@@ -97,6 +100,35 @@ public class ConnectToSqlDB {
                 //System.out.println(ArrayData[n]);
                 ps = connect.prepareStatement("INSERT INTO `"+tableName+"` ( `"+columnName+"` ) VALUES(?);");
                 ps.setInt(1,ArrayData[n]);
+                ps.executeUpdate();
+
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //This method is for database connectivity for CNN API
+    public void insertDataFromListToSqlTable(List<HeadlineNews> arrayList, String tableName, String columnName)
+    {
+        try {
+
+            connectToSqlDatabase();
+            ps = connect.prepareStatement("DROP TABLE IF EXISTS `"+tableName+"`;");
+            ps.executeUpdate();
+            ps = connect.prepareStatement("CREATE TABLE `"+tableName+"` (`ID` int(11) NOT NULL AUTO_INCREMENT,`"+columnName+"` text DEFAULT NULL,  PRIMARY KEY (`ID`) );");
+            ps.executeUpdate();
+
+            for(HeadlineNews entry:arrayList)
+              {
+
+                ps = connect.prepareStatement("INSERT INTO `"+tableName+"` ( `"+columnName+"` ) VALUES(?);");
+                ps.setString(1,entry.getContent());
                 ps.executeUpdate();
 
             }
