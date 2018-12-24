@@ -1,4 +1,9 @@
 package math.problems;
+import databases.ConnectToSqlDB;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class Pattern {
 
@@ -8,8 +13,51 @@ public class Pattern {
 		 *
 		 *
 		 */
-		
 
+//		Connection conn = null;
+//		try{
+//			conn = ConnectToSqlDB.connectToSqlDatabase();
+//		}
+//		catch(SQLException e){
+//			System.out.println(e);
+//		}
+//		catch(ClassNotFoundException e){
+//			System.out.println(e);
+//		}
+//		catch(IOException e){
+//			System.out.println(e);
+//		}
+//
+//		int i= 0;
+//		for(i=100;i>=0;i--) {
+//			if (i / 10 == 9 || i / 10 == 10)
+//				System.out.println(i);
+//
+//			if ( && i / 10 == 8 )
+//				System.out.println(i - 2);
+//		}
+//
+
+
+		//create a Statement from the connection
+//		try {
+//			Statement statement = conn.createStatement();
+//			Iterator i = linkedlist.iterator();
+//			while(i.hasNext())
+//				// insert the data
+//				statement.executeUpdate("INSERT INTO PRIME VALUES("+i.next()+")");
+//		}
+//		catch (SQLException e)
+//		{
+//			System.out.println("Statement Problem"+e);
+//		}
+//		try {
+//			conn.close();
+//		}
+//		catch (SQLException e)
+//		{
+//			System.out.println(" Database Colsing Problem"+e);
+//		}
 
 	}
 }
