@@ -60,7 +60,11 @@ public class EmployeeInfo extends AbstractEmployee {
 		this.joinDate = joinDate;
 		this.salary =0;
 	}
-
+	public String getEmail()
+	{
+		return this.email;
+	}
+	//abstruct method implementation
 	public void assignEmail(String email) {
 		this.email = email;
 
@@ -73,16 +77,13 @@ public class EmployeeInfo extends AbstractEmployee {
 	{
 		 this.joinDate = joinDate;
 	}
-	public String getEmail()
-	{
-		return this.email;
-	}
+
 	//overriden employee salary method
-	public int calculateSalary()
-	{
-
-
-	}
+//	public int calculateSalary()
+//	{
+//
+//
+//	}
 	/*
 	 * This methods should calculate Employee bonus based on salary and performance.
 	 * Then it will return the total yearly bonus. So you need to implement the logic.
