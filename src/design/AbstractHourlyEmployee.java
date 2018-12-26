@@ -1,16 +1,16 @@
 package design;
 
-public abstract class AbstractEmployee implements Employee{
+public abstract class AbstractHourlyEmployee implements Employee{
     private int employeeId;
     private String name;
     private Departments deptName;
     public int hours;
-    public double hourlyRate;
+    private double hourlyRate;
     private  enum Departments{ HR, PRODUCTION,TESTING}
     
-    public AbstractEmployee(){}
+    public AbstractHourlyEmployee(){}
         
-    public AbstractEmployee( String name,int employeeId, int hours, double hourlyRate) {
+    public AbstractHourlyEmployee(String name, int employeeId, int hours, double hourlyRate) {
         this.employeeId = employeeId;
         this.name = name;
         this.deptName = null;
@@ -18,12 +18,7 @@ public abstract class AbstractEmployee implements Employee{
         this.hourlyRate = hourlyRate;
     }
 
-  
-
-   
-
-
-    //employeeId() will return employee id.
+      //employeeId() will return employee id.
     public int employeeId(){
     return this.employeeId;
     }
@@ -33,6 +28,14 @@ public abstract class AbstractEmployee implements Employee{
         return this.name;
 
     }
+    public void setHourlyRate(double hourlyRate)
+
+    {
+        this.hourlyRate = hourlyRate;
+    }
+
+
+
 
     //assignDepartment() will assign employee to departments
     public void assignDepartment()

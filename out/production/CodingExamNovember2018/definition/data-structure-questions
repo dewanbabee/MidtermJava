@@ -1,32 +1,167 @@
 Please answer the below Data Structure Questions:
 
 why do we need data structure?
-A.
+A.A data structure is a specialized format for organizing and storing data. General data structure types include the array,
+ the file, the record, the table, the tree, and so on. Any data structure is designed to organize data to suit a specific
+ purpose so that it can be accessed and worked with in appropriate ways. As the way to store and manipulate internal
+ data mostly determines how much resources and time the application consumed to carry out its tasks, choosing an appropriate
+ data structures can boost the performance of the program and, quite often, reduces implementation efforts.
+
 What are the various operations that can be performed on different Data Structures?
+A. We can Create new information. Retrieve the information. Update information and also
+Delete information from data Structure.
+
 List out the areas in which data structures are applied extensively?
+A.The name of areas are:
+  · Compiler Design,
+  · Operating System,
+  · Database Management System,
+  · Statistical analysis package,
+  · Numerical Analysis,
+  · Graphics,
+  · Artificial Intelligence,
+  · Simulation
+
 what is an Array?
+A. Array is a container that stores multiple element of same type in consecutive
+memory location. Size of an array is fixed as its mentioned at the time of its creation.
+
 what is the difference between the Array and ArrayList?
+A. 1) Fixed Length Vs Variable Length: First and Major difference between Array and ArrayList in Java is that Array is a fixed length data structure while ArrayList is a variable length Collection class. We can not change length of Array once created in Java but ArrayList re-size itself when gets full depending upon capacity and load factor. Since ArrayList is internally backed by Array in Java, any resize operation in ArrayList will slow down performance as it involves creating new Array and copying content from old array to new array.
+
+   2) Using Generics: Another difference between Array and ArrayList in Java is that you can not use Generics along with Array, as Array instance knows about what kind of type it can hold and throws ArrayStoreException, if we try to store type which is not convertible into type of Array. ArrayList allows us to use Generics to ensure type-safety.
+
+   3) Calculate Length:  You can also compare Array vs ArrayList on How to calculate length of Array or size of ArrayList. All kinds of Array provides length variable which denotes length of Array while ArrayList provides size() method to calculate size of ArrayList in Java.
+
+   4) Storing Primitives: One more major difference between ArrayList and Array is that, you can not store primitives in ArrayList, it can only contain Objects. While Array can contain both primitives and Objects in Java. Though Autoboxing of Java 5 may give you an impression of storing primitives in ArrayList, it actually automatically converts primitives to Object. e.g.
+   ArrayList<Integer> integerList = new ArrayList<Integer>();
+   integerList.add(1); //here we are not storing primitive in ArrayList, instead autoboxing will convert int primitive to Integer object
+   5) Adding Elements: Java provides add() method to insert element into ArrayList and you can simply use assignment operator to store element into Array e.g. In order to store Object to specified position use
+
+   Object[] objArray = new Object[10];
+   objArray[1] = new Object();
+
+   6) Mentioning Size when Create : One more difference on Array vs ArrayList is that you can create instance of ArrayList without specifying size, Java will create Array List with default size but its mandatory to provide size of Array while creating either directly or indirectly by initializing Array while creating it. By the way you can also initialize ArrayList while creating it.
+
+
 what is LinkedList?
+A. A linked list is a linear data structure, in which the elements are not stored at contiguous memory locations.
+   In simple words, a linked list consists of nodes where each node contains a data field and a reference(link)
+   to the next node in the list
+
 How is an Array different from Linked List?
+A.1.	Structure : The major difference between Array and Linked list regards to their structure. Arrays are index based data structure where each element associated with an index. On the other hand, Linked list relies on references where each node consists of the data and the references to the previous and next element. Basically, an array is a set of similar data objects stored in sequential memory locations under a common heading or a variable name.
+  2.	Size :Arrays are of fixed size. In contrast, Linked lists are dynamic and flexible and can expand and contract its size.
+  3.	Data Type: An array is the data structure contains a collection of similar type data elements whereas the Linked list is considered as non-primitive data structure contains a collection of unordered linked elements known as nodes.
+  4.	Memory Allocation: For Array element location is allocated during compile time whereas for Linked List, memory location for an element is assigned during runtime
+  5.	Data Access: In the array the elements belong to indexes, i.e., if you want to get into the fourth element you have to write the variable name with its index or location within the square bracket.
+  In a linked list though, you have to start from the head and work your way through until you get to the fourth element.
+  6.	Access Efficiency: While accessing an element array is fast while Linked list takes linear time so, it is quite bit slower.
+  7.	Insertion and Deletion: Operations like insertion and deletion in arrays consume a lot of time. On the other hand, the performance of these operations in Linked lists is fast.
+  8.	Elements Memory Location: Elements are stored consecutively in arrays whereas it is stored randomly in Linked lists.
+  9.	Memory Requirement: The requirement of memory is less due to actual data being stored within the index in the array. As against, there is a need for more memory in Linked Lists due to storage of additional next and previous referencing elements.
+  10.	 Memory Utilization:  memory utilization is inefficient in the array. Conversely, memory utilization is efficient in the Linked List.
+
 what is queue?
+A.Java Queue is an interface available in java.util package and extends java.util.Collection interface.
+ We can use Queue to store elements before processing those elements. Just like Java List, Java Queue is a
+ collection of ordered elements (Or objects) but it performs elements insert and remove operations following
+ FIFO (First in First Out) which means element that is inserted first will be processed/removed first  Just
+ like a real-world queue (for instance, in a bank or at ATM), Queue inserts elements at the end of the queue and
+  removes from the beginning of the queue. Java Queue supports all methods of Collection interface.
+
 what is stack?
+A. Java Collection framework provides a Stack class which models and implements Stack data structure. The class is based on the basic principle of last-in-first-out. In addition to the basic push and pop operations,
+the class provides three more functions of empty, search and peek.
+
 what is FIFO and LIFO?
+A. FIFO is an abbreviation for first in, first out. It is a method for handling data structures where the first element is processed first and the newest element is processed last.
+   LIFO is an abbreviation for Last in, first out is same as fist in, last out (FILO). It is a method for handling data structures where the last element is processed first and the first element is processed last.
+
 what is the order of complexity?
+A. This means that it is a certain mathematical expression of the size of the input, and the algorithm finishes between two factors of it. Generally, the smaller the order of complexity of the program's underlying algorithm, the faster it will run and the better it will scale as the input gets larger.
+   Time complexity is a concept in computer science that deals with the quantification of the amount of time taken by a set of code or algorithm to process or run as a function of the amount of input. In other words, time complexity is essentially efficiency, or how long a program function takes to process a given input.
+
 what is the best case to search an element from an array?
+A. O(1)
 what is the worst case to search an element from an array?
+A. O(n)
 what is tree in data structure?
+A.In computer science, a tree is a widely used abstract data type (ADT)—or data structure implementing this ADT—that simulates a hierarchical tree structure,
+with a root value and subtrees of children with a parent node, represented as a set of linked nodes.
+
 what is graph in data structure?
+A. A Graph is a non-linear data structure consisting of nodes and edges. The nodes are sometimes also referred to as vertices and the edges are lines or arcs that connect any two nodes in the graph. More formally a Graph can be defined as,
+   A Graph consists of a finite set of vertices(or nodes) and set of Edges which connect a pair of nodes.
+
 what is the difference between the HashTable and HashMap?
+1.	The HashMap class is roughly equivalent to Hashtable, except that it is non synchronized and permits nulls. (HashMap allows null values as key and value whereas Hashtable doesn't allow nulls).
+2.	HashMap does not guarantee that the order of the map will remain constant over time.
+3.	HashMap is non synchronized whereas Hashtable is synchronized.
+4.	Iterator in the HashMap is fail-safe while the enumerator for the Hashtable is not and throw ConcurrentModificationException if any other Thread modifies the map structurally by adding or removing any element except Iterator's own remove() method. But this is not a guaranteed behavior and will be done by JVM on best effort.
+
 What are the major data structures used in the following areas : RDBMS, Network data model and Hierarchical data model.
+A. RDBMS--  ??
+   Network data model-- uses graphs
+   Hierarchical data model -- Uses trees as their data structure.
+
 How HashMap works in java?
+A. HashMap in Java works on hashing principle. It is a data structure which allows us to store object and retrieve
+it in constant time O(1) provided we know the key. In hashing, hash functions are used to link key and value in HashMap.
+Objects are stored by calling put(key, value) method of HashMap and retrieved by calling get(key) method. When we call put method,
+hashcode() method of the key object is called so that hash function of the map can find a bucket location to store value object,
+which is actually an index of the internal array, known as the table. HashMap internally stores mapping in the form of Map.
+Entry object which contains both key and value object. When we want to retrieve the object, we call the get() method and again
+pass the key object. This time again key object generate same hash code (it's mandatory for it to do so to retrieve the object
+ and that's why HashMap keys are immutable e.g. String) and we end up at same bucket location.
+ If there is only one object then it is returned and that's our value object which we have stored earlier.
+
 What is ArrayIndexOutOfBoundsException in java? When it occurs?
+A. Its an exception which occurs when are trying to access an array with an illegal index number.
 What are the different ways of copying an array into another array?
+There are mainly four different ways to copy all elements of one array into another array in Java.
+
+1. Manually
+2. Arrays.copyOf()
+3. System.arraycopy()
+4. Object.clone()
+
 What is difference between an array and a linked list?
+1.	Structure : The major difference between Array and Linked list regards to their structure. Arrays are index based data structure where each element associated with an index. On the other hand, Linked list relies on references where each node consists of the data and the references to the previous and next element. Basically, an array is a set of similar data objects stored in sequential memory locations under a common heading or a variable name.
+  2.	Size :Arrays are of fixed size. In contrast, Linked lists are dynamic and flexible and can expand and contract its size.
+  3.	Data Type: An array is the data structure contains a collection of similar type data elements whereas the Linked list is considered as non-primitive data structure contains a collection of unordered linked elements known as nodes.
+  4.	Memory Allocation: For Array element location is allocated during compile time whereas for Linked List, memory location for an element is assigned during runtime
+  5.	Data Access: In the array the elements belong to indexes, i.e., if you want to get into the fourth element you have to write the variable name with its index or location within the square bracket.
+  In a linked list though, you have to start from the head and work your way through until you get to the fourth element.
+  6.	Access Efficiency: While accessing an element array is fast while Linked list takes linear time so, it is quite bit slower.
+  7.	Insertion and Deletion: Operations like insertion and deletion in arrays consume a lot of time. On the other hand, the performance of these operations in Linked lists is fast.
+  8.	Elements Memory Location: Elements are stored consecutively in arrays whereas it is stored randomly in Linked lists.
+  9.	Memory Requirement: The requirement of memory is less due to actual data being stored within the index in the array. As against, there is a need for more memory in Linked Lists due to storage of additional next and previous referencing elements.
+  10.	 Memory Utilization:  memory utilization is inefficient in the array. Conversely, memory utilization is efficient in the Linked List.
+
 What is DFS and BFS?
+The breadth first search (BFS) and the depth first search (DFS)
+are the two algorithms used for traversing and searching a node in a graph.
+
 What is Recursion?
+Recursion is a process in java in which a method calls itself to solve some problem.
+
 What are linear and non linear data Structures?
+The data structure is considered to be linear if the data elements construct a sequence of a linear list. The elements
+are adjacently attached to each other and in a specified order. It consumes linear memory space,
+the data elements are required to store in a sequential manner in the memory.
+Non-linear data structure does not arrange the data consecutively rather it is arranged in sorted order.
+In this, the data elements can be attached to more than one element exhibiting the hierarchical relationship
+which involves the relationship between the child, parent, and grandparent. In the non-linear data structure,
+the traversal of data elements and insertion or deletion are not done sequentially
+
 What is Big-(O)-notation?
+Big O notation is used in Computer Science to describe the performance or complexity of an algorithm. Big O
+specifically describes the worst-case scenario,
+ and can be used to describe the execution time required or the space used (e.g. in memory or on disk) by an algorithm
+
 Outlined different kind of sorting algorithm with time complexity?
+
 
 Draw a table with time complexity in which it will summarize all the data structure feature's advantages and disadvantages.
   a)In terms of Accessing element.
