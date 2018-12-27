@@ -161,12 +161,28 @@ specifically describes the worst-case scenario,
  and can be used to describe the execution time required or the space used (e.g. in memory or on disk) by an algorithm
 
 Outlined different kind of sorting algorithm with time complexity?
-
+Selection Sort: O(n^2)
+Insertion Sort: O(n^2)
+Bubble Sort: O(n^2)
+Merge Sort: O(nlogn)
+Quick Sort:O(n^2)
+Bucket Sort: O(n^2)
+Haep Sort :  O(nlogn)
 
 Draw a table with time complexity in which it will summarize all the data structure feature's advantages and disadvantages.
   a)In terms of Accessing element.
   b)In terms of Inserting element.
   c)In terms of Searching element.
   d)In terms of Removing element.
+
+  Data Structure 	 Data Access	Inserting  	Searching    Removing
+
+
+  Array	                O(1)	        O(n)	    O(n)	    O(n)
+  Stack	                O(n)	        O(n)	    O(1)	    O(1)
+  Oueue	                O(n)	        O(n)	    O(1)	    O(1)
+  Linked List	        O(n)	        O(n)	    O(1)	    O(1)
+  t
+
 
 

@@ -21,7 +21,7 @@ public class FortuneEmployee {
 		EmployeeInfo emp3 = new EmployeeInfo(350);
 
 
-
+		System.out.println("**************    "+EmployeeInfo.companyName+"     *****************");
 
 		emp1.assignEmail("dewanbabee@eedas.com");
 	    emp1.setSalary(88000);

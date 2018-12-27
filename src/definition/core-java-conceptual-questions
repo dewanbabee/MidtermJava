@@ -73,12 +73,21 @@ Can you make an Object from an Interface and Abstract class ? if not how do you 
 A.  We cannot instantiate an interface since it does not have implemented method but we can have instance variable of an interface type that refers
      to an ooject of the class its been implemented by, whereas we can instantiate an abstract class but if that class has an unimplemented
      method, that method must be implemented at the time of instantiation.
+
 what is Access Specifier?
 A. Access modifiers of a java class, subclass , interface , field , method , specify who can access them. There are four access modifiers
 used in java. They are public, private, protected, no modifier (declaring without an access modifier). Using ‘no modifier’ is also sometimes
 referred as ‘package-private’ or ‘default’ or ‘friendly’ access.
 
 What is OOP ? Define each feature of java OOP.
+A. OOP stands for Object Oriented Programming and it uses Oject in the programming language which
+ represent real world entities having state and behaviour. Main Features of OPP are
+    1. Inheritance
+    2.Polymprpthysm
+    3.Encapsulation
+    4. Abstraction
+    5. Dynamic Binding
+
 
 What is Java Package and which package is imported by default?
 A.Java package is a library which contains classes and interfaces. Java.lang package is imported by default.
@@ -105,47 +114,48 @@ exception is an object that wraps an error event that occurred within a method a
  Information about the error including its type.
 
 What is static keyword in java? How it has been used in variables and methods ?
-The static keyword is used in java mainly for memory management. It is used with variables, methods,
+A. The static keyword is used in java mainly for memory management. It is used with variables, methods,
 blocks and nested class. It is a keyword that are used for share the same variable or method of a given class.
 This is used for a constant variable or a method that is the same for every instance of a class
 
 What is final and how it has been used variables and methods?
-final keyword in java. final keyword is used in different contexts.Final is a non-access modifier and it is applicable
+A. Final keyword in java. final keyword is used in different contexts.Final is a non-access modifier and it is applicable
 only to a variable, a method or a class. When a variable is declared with
  final keyword, its value can't be modified, essentially, a constant. When a method is called final , it cant be overridden.
 
 What is final, finally and finalize?
-Final is a keyword in java. Final class can't be inherited, final method can't be overridden and final variable value can't be changed.
+A. Final is a keyword in java. Final class can't be inherited, final method can't be overridden and final variable value can't be changed.
  Finally is used to place important code, it will be executed whether exception is handled or not. Finalize
  is used to perform clean up processing just before object is garbage collected.
+
 What is a constructor ?
-A constructor is a special method of a class or structure in object-oriented programming that initializes an
+A. A constructor is a special method of a class or structure in object-oriented programming that initializes an
 object of that type. A constructor is an instance method that usually has the same name as the class, and can be
 used to set the values of the members of an object, either to default or to user-defined values.
 
 Can we have multiple constructors in a class?
-Yes
+A. Yes
 
 If we don't have a constructor declared, what is called during the object creation?
-A non argument default constructor will be provided by java compiler.
+A. A non argument default constructor will be provided by java compiler.
 
 What is "this" keyword in java ?
-this keyword in java refers to the current object instance variable
+A. this keyword in java refers to the current object instance variable
 
 What is "super" keyword in java? How many possible way can you use?
-super refers to the super class constructor (super()), method(super.method()) or variable(super.variable).
+A. "super" refers to the super class constructor (super()), method(super.method()) or variable(super.variable).
 
 What is JVM stand for ?
-Java Virtual Machine
+A. Java Virtual Machine
 
 Is JVM platform independent?
-No
+A.No
 
 What version of java are you using?
-Java 9.0.4
+A. Java 9.0.4
 
 What is JAR stand for ?
-JAR stands for "Java ARchive". A JAR file is basically a zip-file which contains a couple
+A.JAR stands for "Java ARchive". A JAR file is basically a zip-file which contains a couple
 of class files and a text file containing some meta information.
 
 What is the difference between JDK and JVM?
@@ -153,18 +163,18 @@ What is the difference between JVM and JRE?
 
 
 What is compile time and run time?
-The source code must be compiled into machine code in order to become and executable program. This compilation
+A. The source code must be compiled into machine code in order to become and executable program. This compilation
 process is referred to as compile time.
 A compiled program can be opened and run by a user. When an application is running, it is called runtime.
+
 What is heap?
-heap is an area of memory used for dynamic memory allocation. Blocks of memory are allocated and freed in
+A. Heap is an area of memory used for dynamic memory allocation. Blocks of memory are allocated and freed in
 this case in an arbitrary order. The pattern of allocation and size of blocks is not known until run time.
 
 How java manage it's memory?
-the JVM and more specifically the Garbage Collector  has the duty of handling memory management
+A. The JVM and more specifically the Garbage Collector  has the duty of handling memory management
 
 What is the difference between String, StringBuffer and StringBuilder?
-String
 
 String is a class in Java and String objects are immutable  ( once created can not be changed )object  .
  The object created as a String is stored in the  Constant String Pool.  Every immutable object in Java is thread safe ,
@@ -173,8 +183,8 @@ String is a class in Java and String objects are immutable  ( once created can n
  String is immutable, if you try to alter their values, another object gets created,
  whereas StringBuffer and StringBuilder are mutable so they can change their values.
  The difference between StringBuffer and StringBuilder is that StringBuffer is thread-safe. So
-  when the application needs to be run only in a single thread then it is better to use StringBuilder.
-  StringBuilder is more efficient than StringBuffer.
+ when the application needs to be run only in a single thread then it is better to use StringBuilder.
+ StringBuilder is more efficient than StringBuffer.
 
 What is Singleton class?
 Singleton Class in Java. In object-oriented programming, a singleton class is a class that can have only one
@@ -185,7 +195,7 @@ What is Serialization and Deserialization?
 
 Serialization is a process of converting an object into a sequence of bytes which
 can be persisted to a disk or database or can be sent through streams. The reverse
- process of creating object from sequence of bytes is called deserialization.
+process of creating object from sequence of bytes is called deserialization.
 
 when to use transient variable in java?
 
@@ -193,34 +203,39 @@ Difference between while and do..while loop?
 While loops executes condition is fulfilled but do while loop ececutes least one time even though the condition is not met.
 
 What is Enum?
-A Java Enum is a special Java type used to define collections of constants. More precisely, a Java enum type is a special
+A. A Java Enum is a special Java type used to define collections of constants. More precisely, a Java enum type is a special
 kind of Java class. An enum can contain constants, methods etc
 
 What is Iterator?
-An iterator is something that iterates over something. Like for loop or while loop are iterators. Because they iterate
- through each element in an array, it object or anything you are iterating on.
+A. An iterator is something that iterates over something. Like for loop or while loop are iterators. Because they iterate
+through each element in an array, it object or anything you are iterating on.
 Which one will take more memory, an int or Integer?
 Integer
 
 The string is Immutable in Java because String objects are cached in String pool. ... Another reason of why String
- class is immutable could die due to HashMap. Since Strings are very popular as HashMap key, it's important for them
- to be immutable so that they can retrieve the value object which was stored in Hash
+class is immutable could die due to HashMap. Since Strings are very popular as HashMap key, it's important for them
+to be immutable so that they can retrieve the value object which was stored in Hash
 
 What is constructor chaining in Java?
-Constructor chaining is the process of calling one constructor from another constructor with respect to current object.
+A. Constructor chaining is the process of calling one constructor from another constructor with respect to current object.
 Constructor chaining can be done in two ways:
 Within same class: It can be done using this() keyword for constructors in same class
 From base class: by using super() keyword to call constructor from the base class.
 
 The difference between Serial and Parallel Garbage Collector?
-a serial collector is a default collector which uses only one GC thread
+A. A serial collector is a default collector which uses only one GC thread
 for the GC operation, while a parallel collector uses multiple GC threads for the GC operation.
 
 What is JIT stands for?
-The JIT compiler is enabled by default, and is activated when a Java method is called. The JIT
+A. The JIT compiler is enabled by default, and is activated when a Java method is called. The JIT
 compiler compiles the bytecodes of that method into native machine code, compiling it "just in time" to run.
 When a method has been compiled, the JVM calls the compiled code of that method directly instead of interpreting it.
+
 Explain Java Heap space and Garbage collection?
+A. All runtime object like instance of class and array are stored in Heap area in RAM.
+  Garbage collector in java is a program that rums in java virtual machine to deallocate the memory space occupied by
+  the objects which are no longer in use by the java application.
+
 Can you guarantee the garbage collection process?
 Garbage collection does not guarantee that a program will not run out of memory.
 It is possible for programs to use up memory resources faster than they are garbage collected.
@@ -233,20 +248,23 @@ Reflection makes it possible to inspect classes, fields and methods at runtime, 
  classes, methods etc. at compile time.
 
 what is multithreading in java?
-multithreading is to provide simultaneous execution of two or more parts of a program to maximum utilize the CPU time.
+A.multithreading in java is to provide simultaneous execution of two or more parts of a program to maximum utilize the CPU time.
 A multithreaded program contains two or more parts that can run concurrently. ...
- RUNNABLE – A thread executing in the Java virtual machine is in this state.
+
 
 What is the use of synchronization in Java?
-1. Synchronized keyword in Java is used to provide mutually exclusive access to a shared resource
- with multiple threads in Java. Synchronization in Java guarantees that no two threads can execute a
- synchronized method which requires the same lock simultaneously or concurrently.
+A. Synchronized keyword in Java is used to provide mutually exclusive access to a shared resource
+with multiple threads in Java. Synchronization in Java guarantees that no two threads can execute a
+synchronized method which requires the same lock simultaneously or concurrently.
+
 What is Framework?
-Frameworks are large bodies (usually many classes) of prewritten code to which you add your own code
+A. Frameworks are large bodies (usually many classes) of prewritten code to which you add your own code
 to solve a problem in a specific domain. ... You make use of a framework by calling its methods, inheritance,
- and supplying "callbacks", listeners, or other implementations of the Observer pattern. Constrast to library.
+and supplying "callbacks", listeners, or other implementations of the Observer pattern. Constrast to library.
+
 What are the testing Framework available in java?
 junit , testNG
+
 Difference between jUnit and testNG?
 What are the dependencies for this project?
 
