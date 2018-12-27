@@ -40,7 +40,7 @@ public class PrimeNumber {
 			System.out.println(e);
 		}
 
-		int lowerbound =2;
+		long lowerbound =2;
 		//long higherbound = 1000000L;
 		long higherbound = 500;
 
@@ -63,7 +63,7 @@ public class PrimeNumber {
 		}
 		catch (SQLException e)
 		{
-			System.out.println(" Database Colsing Problem"+e);
+			System.out.println(" Database Closing Problem"+e);
 		}
 
 
@@ -71,11 +71,18 @@ public class PrimeNumber {
 
 
 	}
-	public static void prime(int l,long h){
+	public static void prime(long l,long h){
 		boolean flag = false;
+        if(l<=1) flag = false;
+         if(l==2)
+		 {
+		 	linkedlist.add(Long.valueOf(2));
+			 System.out.println(l);
+		 	l=3;
+		 }
 
-		for (int i = 1; i <=h ; i++) {
-			for (int j = 2; j < i;j++)
+		for (long i = 1; i <=h ; i++) {
+			for (long j = 2; j < i;j++)
 			{
 				if (i % j == 0) {
 					flag = false;

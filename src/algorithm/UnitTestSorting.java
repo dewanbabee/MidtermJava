@@ -24,7 +24,7 @@ public class UnitTestSorting {
         }
 
         //Now implement Unit test for rest of the soring algorithm...................below
-        unSortedArray = tempArray;
+        unSortedArray = tempArray;     //to make the array unsorted again
         sort.bubbleSort(unSortedArray);
         try {
             Assert.assertEquals(sortedArray, unSortedArray, "Tesing Bubble Sort: Array is not Sorted");
@@ -32,7 +32,7 @@ public class UnitTestSorting {
             ex.getMessage();
         }
 
-        unSortedArray = tempArray;
+        unSortedArray = tempArray;  //to make the array unsorted again
          sort.mergeSort(unSortedArray);
         try {
             Assert.assertEquals(sortedArray, unSortedArray, "Array is not Sorted");
@@ -48,14 +48,14 @@ public class UnitTestSorting {
             ex.getMessage();
         }
 
-        unSortedArray = tempArray;
+        unSortedArray = tempArray;     //to make the array unsorted again
         sort.quickSort(unSortedArray);
         try {
             Assert.assertEquals(sortedArray, unSortedArray, "Array is not Sorted");
         }catch(Exception ex){
             ex.getMessage();
         }
-        unSortedArray = tempArray;
+        unSortedArray = tempArray;   ////to make the array unsorted again
         sort.bubbleSort(unSortedArray);
         try {
             Assert.assertEquals(sortedArray, unSortedArray, "Array is not Sorted");
