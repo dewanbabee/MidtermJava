@@ -6,7 +6,7 @@ public class Fibonacci {
           Write 40 Fibonacci numbers with java.
          */
 
-        int n = 5, n1 = 0, n2 = 1;
+        int n = 40, n1 = 0, n2 = 1;
         System.out.print("First " + n + " numbers: ");
 
         for (int i = 1; i <= n; ++i) {

@@ -90,6 +90,8 @@ public class EmployeeInfo extends AbstractHourlyEmployee {
 	{
 		this.salary = salary;
 	}
+
+
 	//overriden employee salary method
 	public int calculateSalary()
 	{

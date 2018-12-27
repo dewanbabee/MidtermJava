@@ -26,7 +26,11 @@ public abstract class AbstractHourlyEmployee implements Employee{
     //employeeName() will return employee name
     public String employeeName(){
         return this.name;
+          }
 
+    public void setEmpolyeeName(String name)
+    {
+        this.name = name;
     }
     public void setHourlyRate(double hourlyRate)
 
@@ -47,6 +51,10 @@ public abstract class AbstractHourlyEmployee implements Employee{
         if(this.employeeId > 350 && this.employeeId<=500)
             this.deptName  = Departments.TESTING;
     }
+    public Departments getDeptName()
+    {
+        return this.deptName;
+    }
 
     //calculate employee salary
     public int calculateSalary()
@@ -59,6 +67,8 @@ public abstract class AbstractHourlyEmployee implements Employee{
     {
         System.out.println("will come back later");
     }
+
+
     public abstract void assignEmail(String email);
 
 }

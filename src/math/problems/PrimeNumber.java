@@ -41,8 +41,8 @@ public class PrimeNumber {
 		}
 
 		long lowerbound =2;
-		//long higherbound = 1000000L;
-		long higherbound = 500;
+		long higherbound = 1000000L;
+		//long higherbound = 500;
 
 
 		prime(lowerbound,higherbound);

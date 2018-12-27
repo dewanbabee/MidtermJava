@@ -22,7 +22,7 @@ public class UnitTestingMath {
             save_out = System.out;
             System.setOut(new PrintStream(out));
             testPrime();
-            //testLowestNumber();
+            testLowestNumber();
             testFindMissingNumber();
             testFibonacci();
 
